@@ -33,9 +33,13 @@ def tri_p1(x,y,eval_p):
     phi = np.zeros((n,3))
     for i in range(n):
         xi, yi = eval_p[i]
+        # xy1 = np.array(eval_p[i].tolist().append(1.0))
         for j in range(3):
-            a, b, c = coeffs[j]
-            phi[i][j] = a * xi + b * yi + c
+            # a, b, c = coeffs[j]
+            # phi[i][j] = a * xi + b * yi + c
+            phi[i][j] = np.dot(coeffs[j],[xi,yi,1])
+            # phi[i][j] = np.dot(coeffs[j],xy1)
+
 
     dx_phi, dy_phi, cs = coeffs.transpose()
     surf_e = 1./2. * abs(x[0]*y[2]-x[0]*y[1]+x[1]*y[0]-x[1]*y[2]+x[2]*y[1]-x[2]*y[0] )
@@ -44,21 +48,5 @@ def tri_p1(x,y,eval_p):
     print dy_phi
     print phi
     print surf_e
-
-
-
-
-
-
-
-
-
-
-
-
-    # eval_p has a dimensional problem!!!!!!
-
-    # print(coeffs)
-
 
     return dx_phi,dy_phi,phi[0],surf_e
