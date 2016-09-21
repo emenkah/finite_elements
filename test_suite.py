@@ -27,33 +27,33 @@ def matrix_almost_equal(a,b,digits):
             return truth
     return truth
 
-# class BasisFuncsTest(unittest.TestCase):
-#     def test_basis_func_00(self):
-#         x = np.array([0.,1.,0.])
-#         y = np.array([0.,0.,1.])
-#         dx_phi,dy_phi,phi,surf_e = tri_p1(x,y,np.array([.1,.2]))
-#         self.assertTrue(almost_equal(surf_e,.5,1))
-#         self.assertTrue(lists_almost_equal(dx_phi, [-1., 1., 0.],1))
-#         self.assertTrue(lists_almost_equal(dy_phi, [-1., 0., 1.],1))
-#         self.assertTrue(lists_almost_equal(phi,[0.7, 0.1, 0.2],1))
-#     def test_basis_func_01(self):
-#         x = np.array([1.,1.,0.])
-#         y = np.array([0.,1.,1.])
-#         dx_phi,dy_phi,phi,surf_e = tri_p1(x,y,np.array([.9,.8]))
-#         self.assertTrue(almost_equal(surf_e,.5,1))
-#         self.assertTrue(lists_almost_equal(dx_phi, [0.,1.,-1.],1))
-#         self.assertTrue(lists_almost_equal(dy_phi, [-1.,1.,0.],1))
-#         self.assertTrue(lists_almost_equal(phi,[0.2 ,0.7, 0.1],1))
+class BasisFuncsTest(unittest.TestCase):
+    def test_basis_func_00(self):
+        x = np.array([0.,1.,0.])
+        y = np.array([0.,0.,1.])
+        dx_phi,dy_phi,phi,surf_e = tri_p1(x,y,np.array([.1,.2])) #added brace
+        self.assertTrue(almost_equal(surf_e,.5,1))
+        self.assertTrue(lists_almost_equal(dx_phi, [-1., 1., 0.],1))
+        self.assertTrue(lists_almost_equal(dy_phi, [-1., 0., 1.],1))
+        self.assertTrue(lists_almost_equal(phi,[0.7, 0.1, 0.2],1))
+    def test_basis_func_01(self):
+        x = np.array([1.,1.,0.])
+        y = np.array([0.,1.,1.])
+        dx_phi,dy_phi,phi,surf_e = tri_p1(x,y,np.array([.9,.8]))
+        self.assertTrue(almost_equal(surf_e,.5,1))
+        self.assertTrue(lists_almost_equal(dx_phi, [0.,1.,-1.],1))
+        self.assertTrue(lists_almost_equal(dy_phi, [-1.,1.,0.],1))
+        self.assertTrue(lists_almost_equal(phi,[0.2 ,0.7, 0.1],1))
 
 
-class MeshTest(unittest.TestCase):
-    def test_read_msh(self):
-        expected = np.array([ 65,129,85],dtype=np.int_)
-        topo , x , y , nodes , b_nodes = read_msh('mesh/square.msh')
-        result = topo[10,:]
-        self.assertItemsEqual(result, expected)
-        self.assertItemsEqual(b_nodes[:5], [0,4,5,6,7])
-        # assertCountEqual for python 3
+# class MeshTest(unittest.TestCase):
+#     def test_read_msh(self):
+#         expected = np.array([ 65,129,85],dtype=np.int_)
+#         topo , x , y , nodes , b_nodes = read_msh('mesh/square.msh')
+#         result = topo[10,:]
+#         self.assertItemsEqual(result, expected)
+#         self.assertItemsEqual(b_nodes[:5], [0,4,5,6,7])
+#         # assertCountEqual for python 3
 
 # class AssembleTest(unittest.TestCase):
 #     def test_assemble(self):

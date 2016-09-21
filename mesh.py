@@ -18,9 +18,9 @@ def read_msh(filename):
             if len(l) == 4:
                 x = np.append(x,l[1])
                 y = np.append(y,l[2])
-            if len(l) == 7:
-
-            if len(l) == 8:
+            # if len(l) == 7:
+            #
+            # if len(l) == 8:
 
 
     print(x)

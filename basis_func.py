@@ -21,4 +21,44 @@ def tri_p1(x,y,eval_p):
     Notice: all the quantities are computed on the current element
 
     """
+
+    A = np.column_stack((x,y,[1,1,1]))
+    one = np.identity(3)
+    coeffs = np.zeros((3,3))
+    for i in range(3): # loop over phi_(1..3)
+        coeffs[i] = np.linalg.solve(A,one[i])
+
+    eval_p = np.array([eval_p]) # comment out when not testing
+    n = len(eval_p) # number of evaluation points
+    phi = np.zeros((n,3))
+    for i in range(n):
+        xi, yi = eval_p[i]
+        for j in range(3):
+            a, b, c = coeffs[j]
+            phi[i][j] = a * xi + b * yi + c
+
+    dx_phi, dy_phi, cs = coeffs.transpose()
+    surf_e = 1./2. * abs(x[0]*y[2]-x[0]*y[1]+x[1]*y[0]-x[1]*y[2]+x[2]*y[1]-x[2]*y[0] )
+
+    print dx_phi
+    print dy_phi
+    print phi
+    print surf_e
+
+
+
+
+
+
+
+
+
+
+
+
+    # eval_p has a dimensional problem!!!!!!
+
+    # print(coeffs)
+
+
     return dx_phi,dy_phi,phi[0],surf_e
