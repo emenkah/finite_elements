@@ -13,7 +13,8 @@ def read_msh(filename):
 
     for line in f:
         if line[0] ==  '$':
-            print ("this is useless")
+            # print ("this is useless")
+            None
         else:
 
              l = map(float,line.split())
@@ -38,7 +39,7 @@ def read_msh(filename):
     f.close()
     topo = np.reshape(topo,(len(topo)/3,3))
     topo = topo - 1
-    print topo
+    # print topo
 
     r_id = 0
     for row in topo:
@@ -48,5 +49,5 @@ def read_msh(filename):
             topo[r_id,:] = np.array([[row[0],row[2],row[1]]])
         r_id+=1
 
-    print r_id
+    # print r_id
     return topo , x , y , nodes , b_nodes
