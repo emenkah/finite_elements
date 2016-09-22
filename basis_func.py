@@ -21,7 +21,7 @@ def tri_p1(x,y,eval_p):
     Notice: all the quantities are computed on the current element
 
     """
-
+    # print len(x)
     A = np.column_stack((x,y,[1,1,1]))
     one = np.identity(3)
     coeffs = np.zeros((3,3))
@@ -44,9 +44,9 @@ def tri_p1(x,y,eval_p):
     dx_phi, dy_phi, cs = coeffs.transpose()
     surf_e = 1./2. * abs(x[0]*y[2]-x[0]*y[1]+x[1]*y[0]-x[1]*y[2]+x[2]*y[1]-x[2]*y[0] )
 
-    print dx_phi
-    print dy_phi
-    print phi
-    print surf_e
+    # print dx_phi
+    # print dy_phi
+    # print phi
+    # print surf_e
 
     return dx_phi,dy_phi,phi[0],surf_e
