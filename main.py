@@ -23,7 +23,9 @@ if __name__ == "__main__":
     # A = clear_rows(A,b_nodes)
     # print A
 
-    topo , x , y , nodes , b_nodes = read_msh("mesh/square.msh")
+    #topo , x , y , nodes , b_nodes = read_msh("mesh/square.msh")
+    #topo , x , y , nodes , b_nodes = read_msh("mesh/l_shape.msh")
+    topo , x , y , nodes , b_nodes = read_msh("mesh/l_half_circle.msh")
     
     A = gradu_gradv(topo,x,y)
     F = f_v(topo,x,y)

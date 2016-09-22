@@ -13,8 +13,8 @@ def read_msh(filename):
 
     for line in f:
         if line[0] ==  '$':
-            # print ("this is useless")
-            None
+             print ("Not interested in this portion")
+            #None
         else:
 
              l = map(float,line.split())
