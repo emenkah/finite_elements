@@ -7,4 +7,5 @@ def gradu_gradv(topo,x,y):
 
 def f_v(topo,x,y):
     """ F assembly code """
+    F = np.zeros(x.shape[0],y.shape[0])
     return F
