@@ -6,7 +6,7 @@ We esentially wrote up a python script to read a mesh file[.msh], that was gener
 Computationally, the task was divided in three parts:
 
 
-1. Reading the data file[.msh file] (mesh.py)
+1. Reading the data file(.msh file) [mesh.py]
 2. Evaluating the data with the basis functions (basis_func.py)
 3. Putting the written codes together(assembly.py)
 
